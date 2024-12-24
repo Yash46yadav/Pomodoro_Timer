@@ -14,6 +14,7 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
+
 # ---------------------------- TIMER RESET ------------------------------- # 
 def reset_timer():
     window.after_cancel(timer)
@@ -23,13 +24,8 @@ def reset_timer():
     global reps
     reps = 0
 
-
-
-
-
-
-
 # ---------------------------- TIMER MECHANISM ------------------------------- #
+
 def start_timer():
     global reps
     reps += 1
@@ -47,8 +43,8 @@ def start_timer():
         count_down(work_sec)
         title_label.config(text="Work", fg=GREEN)
 
-
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+
 def count_down(count):
     count_min = math.floor(count / 60)
     count_sec = count  % 60
@@ -66,8 +62,8 @@ def count_down(count):
             marks += "✔"
             check_mark.config(text = marks)
 
-
 # ---------------------------- UI SETUP ------------------------------- #
+
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady = 50 , bg=YELLOW)
